@@ -1,24 +1,24 @@
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3) + 1;
   if (computerChoice === 1) {
-    computerChoice = 'Камень';
+    computerChoice = 'Rock';
     return computerChoice;
   } else if (computerChoice === 2) {
-    computerChoice = 'Ножницы';
+    computerChoice = 'Scissors';
     return computerChoice;
   } else {
-    computerChoice = 'Бумага'
+    computerChoice = 'Paper'
     return computerChoice;
   }
 }
 
 function getHumanChoice() {
-  let humanChoice = prompt('Выберите один из вариантов: Ножницы, Камень, Бумага.');
+  let humanChoice = prompt('Choose one of the options: Scissors, Rock, Paper.');
   humanChoice = (humanChoice.at(0).toUpperCase()) + (humanChoice.slice(1).toLowerCase());
-  if (humanChoice == 'Камень' || humanChoice == 'Ножницы' || humanChoice == 'Бумага') {
+  if (humanChoice == 'Rock' || humanChoice == 'Scissors' || humanChoice == 'Paper') {
     return humanChoice;
   } else {
-    return alert('Неправильный ввод, попробуйте ещё раз.');
+    return alert('Incorrect input, please try again.');
   }
 }
 
@@ -26,39 +26,39 @@ function getHumanChoice() {
   let computerScore = 0;
 
 function playRound(getHumanChoice, getComputerChoice) {
-  if (getHumanChoice == 'Бумага' && getComputerChoice == 'Камень') {
+  if (getHumanChoice == 'Paper' && getComputerChoice == 'Rock') {
     humanScore += 1;
-    alert(`Игрок выбрал ${getHumanChoice}, компьютер ${getComputerChoice}. Игрок выйграл`);
-  } else if (getHumanChoice == 'Камень' && getComputerChoice == 'Ножницы') {
+    alert(`Player chose ${getHumanChoice}, the computer ${getComputerChoice}. The player won`);
+  } else if (getHumanChoice == 'Rock' && getComputerChoice == 'Scissors') {
     humanScore += 1;
-    alert(`Игрок выбрал ${getHumanChoice}, компьютер ${getComputerChoice}. Игрок выйграл`);
-  } else if (getHumanChoice == 'Ножницы' && getComputerChoice == 'Бумага') {
+    alert(`Player chose ${getHumanChoice}, the computer ${getComputerChoice}. The player won`);
+  } else if (getHumanChoice == 'Scissors' && getComputerChoice == 'Paper') {
     humanScore += 1;
-    alert(`Игрок выбрал ${getHumanChoice}, компьютер ${getComputerChoice}. Игрок выйграл`)
+    alert(`Player chose ${getHumanChoice}, the computer ${getComputerChoice}. The player won`)
   } else if (getHumanChoice == getComputerChoice) {
-    alert(`Игрок выбрал ${getHumanChoice}, компьютер ${getComputerChoice}. Ничья.`)
+    alert(`Player chose ${getHumanChoice}, the computer ${getComputerChoice}. Draw.`)
   } else {
     computerScore += 1;
-    alert(`Игрок выбрал ${getHumanChoice}, компьютер ${getComputerChoice}. Компьютер выйграл`);
+    alert(`Player chose ${getHumanChoice}, the computer ${getComputerChoice}. The computer won`);
   }
 }
 
 function playGame(){
-  alert(`Добро пожаловать в игру "Камень, ножницы, бумага"! \n\nЧтобы начать нажмите "Close"`)
+  alert(`Welcome to Rock, Paper, Scissors!\n\nClick "Close" to begin.`)
   playRound(getHumanChoice(), getComputerChoice())
-  alert(`1 раунд\n\nСЧЁТ: У вас ${humanScore} очков. У компьютера ${computerScore} очков.`)
+  alert(`Round 1\n\nSCORE: You have ${humanScore} points. The computer has ${computerScore} points.`)
   playRound(getHumanChoice(), getComputerChoice())
-  alert(`2 раунд\n\nСЧЁТ: У вас ${humanScore} очков. У компьютера ${computerScore} очков.`)
+  alert(`Round 2\n\nSCORE: You have ${humanScore} points. The computer has ${computerScore} points.`)
   playRound(getHumanChoice(), getComputerChoice())
-  alert(`3 раунд\n\nСЧЁТ: У вас ${humanScore} очков. У компьютера ${computerScore} очков.`)
+  alert(`Round 3\n\nSCORE: You have ${humanScore} points. The computer has ${computerScore} points.`)
   playRound(getHumanChoice(), getComputerChoice())
-  alert(`4 раунд\n\nСЧЁТ: У вас ${humanScore} очков. У компьютера ${computerScore} очков.`)
+  alert(`Round 4\n\nSCORE: You have ${humanScore} points. The computer has ${computerScore} points.`)
   playRound(getHumanChoice(), getComputerChoice())
-  alert(`5 раунд\n\nСЧЁТ: У вас ${humanScore} очков. У компьютера ${computerScore} очков.`)
+  alert(`Round 5\n\nSCORE: You have ${humanScore} points. The computer has ${computerScore} points.`)
   if (humanScore > computerScore) {
-    alert(`ПОБЕДА\nВы набрали больше очков чем компьютер.`)
+    alert(`VICTORY\nYou scored more points than the computer.`)
   } else {
-    alert(`ПРОИГРЫШ\nК сожалению, вы проиграли.`)
+    alert(`LOSS\nUnfortunately, you lost.`)
   }
   humanScore = 0;
   computerScore = 0;
