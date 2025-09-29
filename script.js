@@ -8,3 +8,12 @@ function getComputerChoice() {
     return computerChoice = 'Бумага';
   }
 }
+
+function getHumanChoice() {
+  humanChoice = prompt('Выберите один из вариантов: Ножницы, Камень, Бумага.');
+  if (humanChoice == 'Камень' || humanChoice == 'Ножницы' || humanChoice == 'Бумага') {
+    return humanChoice;
+  } else {
+    return alert('Неправильный ввод, попробуйте ещё раз.');
+  }
+}
